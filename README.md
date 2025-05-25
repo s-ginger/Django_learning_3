@@ -1,4 +1,4 @@
-# Django Project with Jinja2 & PostgreSQL
+# Django Project with Jinja2 & PostgreSQL 
 
 ![Django](https://img.shields.io/badge/Django-4.x-green)
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
@@ -7,7 +7,11 @@
 
 ---
 
-## Описание проекта
+## Проект еще в разработке 
+
+но уже представляет готовый шаблон для проекта испоьзующего шаблонизатор jinja2 и postgreSQL
+
+## Описание проекта 
 
 Это веб-приложение на Django с использованием альтернативного шаблонизатора [Jinja2](https://jinja.palletsprojects.com/) вместо стандартного Django Templates. В качестве базы данных используется [PostgreSQL](https://www.postgresql.org/), что обеспечивает стабильность и масштабируемость.
 
