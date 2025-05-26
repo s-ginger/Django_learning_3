@@ -22,7 +22,8 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.my_view),
+    path('', views.main_page, name='home'),
+    path('delete/<int:note_id>/', views.delete_note, name='delete_note'),
     path('api/', include('api.urls')),
 ]
 
