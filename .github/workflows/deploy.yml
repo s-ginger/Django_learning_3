@@ -11,7 +11,7 @@ jobs:
 
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
-      ALLOWED_HOSTS=localhost,127.0.0.1
+      ALLOWED_HOSTS: localhost,127.0.0.1
 
     steps:
     - uses: actions/checkout@v3
