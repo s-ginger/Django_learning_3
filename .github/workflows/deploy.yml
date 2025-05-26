@@ -33,3 +33,4 @@ jobs:
       run: python manage.py test
 
     # Далее — деплой (например, на Railway через CLI или другой механизм)
+
