@@ -1,23 +1,19 @@
-name: Django Deploy
+name: Deploy Django app
 
 on:
   push:
     branches:
-      - main  # или другая ветка, если у тебя иначе
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     env:
-      DJANGO_SETTINGS_MODULE: project.settings
-      ALLOWED_HOSTS: "127.0.0.1,localhost"
-      DEBUG: "True"
-      SECRET_KEY: "fake-secret-for-build"  # безопасно, если он не попадает в прод
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -29,15 +25,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run makemigrations
-      run: |
-        python manage.py makemigrations
+    - name: Run migrations
+      run: python manage.py migrate
 
-    - name: Run migrate
-      run: |
-        python manage.py migrate
+    - name: Run tests (optional)
+      run: python manage.py test
 
-    - name: Collect static files
-      run: |
-        python manage.py collectstatic --noinput
-
+    # Далее — деплой (например, на Railway через CLI или другой механизм)

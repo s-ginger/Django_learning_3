@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.parse(os.getenv('DATABASE_URL')),
-    # 'default': {
+    # 'default': {s
     #     'ENGINE': 'django.db.backends.postgresql',
     #     'NAME': os.getenv("DB_NAME"),
     #     'USER': os.getenv("DB_USER"),
