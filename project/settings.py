@@ -91,6 +91,7 @@ CSRF_TRUSTED_ORIGINS = os.getenv("CSRF_TRUSTED_ORIGINS").split(",")
 
 DATABASES = {
     'default': dj_database_url.parse(os.getenv('DATABASE_URL')),
+    
     # 'default': {s
     #     'ENGINE': 'django.db.backends.postgresql',
     #     'NAME': os.getenv("DB_NAME"),
